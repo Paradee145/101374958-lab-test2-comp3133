@@ -1,0 +1,18 @@
+<div class="container">
+    <mat-toolbar color="primary">SpaceX Mission List</mat-toolbar>
+  
+    <div class="missions">
+      <mat-card *ngFor="let launch of launches" class="mission-card" (click)="openDetails(launch.flight_number)">
+        <mat-card-header>
+          <mat-card-title>{{ launch.mission_name }}</mat-card-title>
+          <mat-card-subtitle>Launch Year: {{ launch.launch_year }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="launch.links.mission_patch_small" alt="Mission Patch" />
+        <mat-card-content>
+          <p>{{ launch.details || 'No details available.' }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  
+  
